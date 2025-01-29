@@ -7,69 +7,71 @@ date: 2024-01-05
 isPinned: true
 ---
 
-## Intro
+# 2024 Professional Development Roadmap
 
-Despite coding for approximately two years, I'm still fighting against **Impostor Syndrome**, that deep feeling that tells you _"you're not good enough"_ or _"you don't know enough"_.
+## Introduction
 
-Therefore, in 2024, I set out to focus on personal growth and increasing self-confidence. So I bring you my **Personal Roadmap** for 2024, to become a **Frontend** expert.
+After two years of coding experience, I still wrestle with **Impostor Syndrome** - that persistent voice suggesting _"you're not good enough"_ or _"you don't know enough"_.
 
-## Frontend
+For 2024, I've decided to focus on personal growth and building professional confidence. Here's my **Technical Development Roadmap** for becoming a **Frontend Expert**.
 
-### Javascript:
+## Frontend Development Focus
 
-I have a pretty good handle on **Javascript**. At the end of 2023, I participated in Advent coding challenges ([AdventJS](https://adventjs.dev/)). Therefore, I'm pretty fresh on the logical and algorithmic parts.
+### JavaScript Mastery
 
-Still, I'm very eager to review certain concepts:
+My foundation in **JavaScript** is solid, reinforced by my participation in the 2023 [AdventJS](https://adventjs.dev/) coding challenges, which sharpened my algorithmic thinking and problem-solving skills.
+
+However, I'm committed to mastering these advanced concepts:
 
 - [Typed Arrays](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Typed_arrays)
-- [Equality Algorithms](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness)
-- [Event Loops](https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/#what-is-the-event-loop)
+- [Equality Comparison Algorithms](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness)
+- [Event Loop Architecture](https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/#what-is-the-event-loop)
 - [Iterators & Generators](https://www.codeguage.com/courses/advanced-js/iteration-iterators)
-- [Garbage Collection](https://javascript.info/garbage-collection)
-- [Memory Lifecycle](https://medium.com/swlh/the-lifecycle-of-memory-in-javascript-5b5bffc5ff4cf)
-- [Debugging Memory Leaks](https://www.debugbear.com/blog/debugging-javascript-memory-leaks)
-- **Debugging performance**
+- [Garbage Collection Mechanisms](https://javascript.info/garbage-collection)
+- [Memory Management Lifecycle](https://medium.com/swlh/the-lifecycle-of-memory-in-javascript-5b5bffc5ff4cf)
+- [Memory Leak Detection and Resolution](https://www.debugbear.com/blog/debugging-javascript-memory-leaks)
+- **Performance Optimization Techniques**
 
-As a goal for the first few months of this year, I would love to be able to tackle these topics in depth and take another step with **Javascript**. Mastering **Javascript** is not a difficult task, but mastering the more advanced aspects is. That's the point I want to reach!
+My Q1-Q2 goal is to thoroughly understand these advanced JavaScript concepts, elevating my expertise beyond basic proficiency.
 
-### React:
+### React Enhancement
 
-Something similar happens with **React**. I haven't finished learning it 100%, so it's ultra necessary for me to go back, stop, study. And thus stop solving issues on the fly.
+While I'm proficient with **React**, I aim to transition from documentation-dependent development to comprehensive understanding. Key focus areas include:
 
-When working with **Next.js**, it happens that I don't remember some things, so I refer to the documentation and continue. I'd like to leave that documentation dependency. Therefore, I would like to review the following topics:
-
-- Hooks:
+- Advanced Hook Implementation:
   - [useReducer](https://react.dev/reference/react/useReducer)
   - [useMemo](https://www.robinwieruch.de/react-usememo-hook/)
-- React Router & Reach Router
-- GraphQL:
-  - Apollo
-- Jest, Vitest, PlayWright. (_It's about time, isn't it?_)
-- Axios, SWR
-- **React Native**
+- Routing Systems (React Router & Reach Router)
+- GraphQL Integration:
+  - Apollo Client Implementation
+- Testing Frameworks:
+  - Jest
+  - Vitest
+  - PlayWright
+- Data Fetching:
+  - Axios
+  - SWR
+- **React Native Development**
 
-### Vue.js
+### Vue.js Adoption
 
-This year I set out to learn **[Vue.js](https://vuejs.org/)**. To leave that dependency on _Next.js_ that some of us have.
+To diversify my framework expertise beyond Next.js, I'm committed to learning **[Vue.js](https://vuejs.org/)** from fundamentals to advanced concepts.
 
-- From 0 to 100%. (_Practically, I don't know Vue.js, so I have to study everything._)
+### Architecture & Design
 
-### Design Patterns and Design Systems
+- Design Patterns and Systems
+- Atomic Design Methodology
+- CSS Architecture:
+  - BEM Methodology
+  - SUIT Convention
+- Quik Framework
 
-### Atomic Design
+## Backend Technologies
 
-### BEM and SUIT
+### Rust Development
 
-### Quik
+By mid-2024, I plan to begin learning **Rust**. Having migrated my [NixOS configuration](https://github.com/linuxmobile/kaku) tools to Rust-based alternatives for their superior performance and memory efficiency, I aim to contribute to the **Free Software** ecosystem by developing Linux tools.
 
-## Rust
+### TypeScript Advancement
 
-By mid-year I would like to start with **Rust**. Almost my entire suite of tools from [my NixOS configuration](https://github.com/linuxmobile/kaku) is written in **Rust**.
-
-Why did I migrate all my tools to alternatives written in **Rust**? For the speed, performance, memory consumption and more.
-
-So, to get closer to that **dream** I have of creating **Free Software** tools for **Linux**, I want to start with this small _or huge_ step.
-
-## Typescript
-
-While I already know the basics of **Typescript**, it's not that different from **JS**. I would like to go much deeper and become an _advanced "Typescripter"!_
+While familiar with **TypeScript** basics, I aspire to achieve advanced proficiency in type systems and TypeScript-specific patterns.

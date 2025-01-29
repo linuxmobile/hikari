@@ -11,16 +11,13 @@ This article is part of a draft. It may be incomplete.
 
 :::
 
-## Intro
+# Understanding Kaku: A NixOS Configuration Guide
 
-![](https://i.imgur.com/FmGUopQ.png)
+![NixOS Configuration Banner](https://i.imgur.com/FmGUopQ.png)
 
-## Kaku (my configuration)
+## Overview
 
-Today I want to explain some parts of
-[my personal configuration](https://github.com/linuxmobile/kaku).
-
-If you want to know a bit about my configuration you can run:
+This guide explains my personal NixOS configuration, [Kaku](https://github.com/linuxmobile/kaku), designed for a modern desktop environment. Before diving in, you can preview the configuration structure using:
 
 ```bash
 › nix flake show github:linuxmobile/kaku
@@ -42,7 +39,11 @@ github:linuxmobile/kaku/8394cdcfd946c9620d202fec46f5eb625812c826
         └───wezterm: package 'wezterm-unstable-e3cd2e93d0ee5f3af7f3fe0af86ffad0cf8c7ea8'
 ```
 
-### Flake.nix
+## Configuration Structure
+
+The configuration is organized into six main directories, each with a specific purpose:
+
+### 1. Directory Layout
 
 ```bash
 ├── home
@@ -81,8 +82,9 @@ github:linuxmobile/kaku/8394cdcfd946c9620d202fec46f5eb625812c826
 └── flake.nix
 ```
 
-In this section we can see **six** main configuration folders. Each one serves
-an important function. _Let's explain each one step by step:_
+### 2. Home Directory (`home/`)
+
+The `home/` directory manages user-specific configurations using Home Manager:
 
 ### Home
 
@@ -105,7 +107,11 @@ an important function. _Let's explain each one step by step:_
 - **Services**: Logically contains services or programs that act as services.
 - **Terminal**: Zsh, CLI tools and more.
 
-### Hosts
+💡 **Tip**: Create your profile in `profiles/` and link it to your host configuration.
+
+### 3. Host Configuration (`hosts/`)
+
+Each machine gets its own configuration:
 
 ```bash
 | Name      | Description                    |
@@ -113,17 +119,11 @@ an important function. _Let's explain each one step by step:_
 | aesthetic | LinuDev's Main Computer        |
 ```
 
-All `hosts` share configuration in `modules/core.nix`. Host-specific
-configurations are stored within the specific host directory. Each host imports
-its own modules within `default.nix`.
+All hosts share common settings through `modules/core.nix`, with machine-specific configurations in their respective directories.
 
-Therefore, it's recommended to create a folder in `hosts`. Inside that, create a
-`default.nix` and include what you extract from the `nixos-generate-config`
-command.
+### 4. Custom Libraries (`lib/`)
 
-### Lib
-
-_Various functions that I use throughout the configuration_
+Contains utility functions and theme management:
 
 ```bash
 | Name        | Description                                  |
@@ -134,9 +134,9 @@ _Various functions that I use throughout the configuration_
 | theme       | Program that I reference later               |
 ```
 
-### Pkgs
+### 5. Custom Packages (`pkgs/`)
 
-Some packages I can't find or that I prefer to package myself.
+Self-maintained packages:
 
 ```bash
 | Name    | Description                                          |
@@ -146,9 +146,9 @@ Some packages I can't find or that I prefer to package myself.
 | wezterm | There was a Wayland issue, I fix it here             |
 ```
 
-### System
+### 6. System Configuration (`system/`)
 
-_These are currently the modularized system settings_
+Core system settings:
 
 ```bash
 | Name     | Description              |
@@ -171,67 +171,84 @@ _These are currently the modularized system settings_
 
 Highly recommended: review each folder and see what is necessary and what isn't.
 
-## Fresh Installation
+## Fresh Installation Guide
 
-_If you're doing a fresh installation and want to have the same configuration as
-me, it's not too complex._
+### Prerequisites
+- A USB drive with NixOS
+- UEFI-capable system
+- Basic command line knowledge
 
-1. You'll need to partition the disk:
+### Step-by-Step Installation
 
-- My recommendation is always three partitions: `Home`, `Root` and `EFI`.
-- You can use `gdisk` if you're using `UEFI`.
+1. **Partition the Disk**
 
-```bash
-# This is an example
-gdisk /dev/nvme0n1 # I use nvme
+   Create three partitions using `gdisk`:
+   - EFI (512MB)
+   - Root (50GB+)
+   - Home (remaining space)
 
-# 'o' letter to create a new partition table
-# 'n' to add partition (EFI) type ef00
-# etc...
-```
+   ```bash
+   gdisk /dev/nvme0n1
+   # 'o' - create new partition table
+   # 'n' - new partition (EFI: type ef00)
+   ```
 
-2. Format the partitions with `mkfs`.
+2. **Format Partitions**
 
-- I use xfs for the system.
+   ```bash
+   # Format EFI partition
+   mkfs.fat -F 32 /dev/nvme0n1p1
 
-3. Mount the partitions
+   # Format root partition (XFS)
+   mkfs.xfs /dev/nvme0n1p2
 
-```bash
-# this partition format is my example. MY EXAMPLE ;)
-mount /dev/disk/by-label/NIXOS /mnt
-mkdir -p /mnt/boot
-mount /dev/disk/by-label/EFI /mnt/boot
-```
+   # Format home partition
+   mkfs.xfs /dev/nvme0n1p3
+   ```
 
-4. Enable nixFlakes and git to use my configuration
+3. **Mount Filesystems**
 
-```bash
-nix-shell -p nixFlakes git
-```
+   ```bash
+   mount /dev/disk/by-label/NIXOS /mnt
+   mkdir -p /mnt/boot
+   mount /dev/disk/by-label/EFI /mnt/boot
+   ```
 
-5. Clone my repo with git
+4. **Enable Required Tools**
 
-```bash
-# Clone it to /mnt/etc/nixos
-# If you don't have the /mnt/ folder it's because you didn't mount the partitions correctly!
-git clone --depth 1 https://github.com/linuxmobile/kaku /mnt/etc/nixos
-```
+   ```bash
+   nix-shell -p nixFlakes git
+   ```
 
-6. You need to generate `nixos-generate-config` for proper installation.
+5. **Clone Configuration**
 
-```bash
-# In this case remember that HOSTS is the folder where you put your config,
-# In my case it's aesthetic, so I use it as an example
-sudo nixos-generate-config --dir --force /mnt/etc/nixos/hosts/aesthetic
-```
+   ```bash
+   git clone --depth 1 https://github.com/linuxmobile/kaku /mnt/etc/nixos
+   ```
 
-7. Go to the folder and install my configuration:
+6. **Generate Hardware Configuration**
 
-```bash
-# Go to the mnt folder if you're not there
-cd /mnt/etc/nixos/
+   ```bash
+   sudo nixos-generate-config --dir --force /mnt/etc/nixos/hosts/aesthetic
+   ```
 
-# In my case it's .#aesthetic, if you gave it your host or user name
-# You should replace it
-nixos-install --flake .#aesthetic
-```
+7. **Install System**
+
+   ```bash
+   cd /mnt/etc/nixos
+   nixos-install --flake .#aesthetic
+   ```
+
+### Post-Installation
+
+After installation:
+1. Review the configuration files
+2. Customize user settings
+3. Rebuild the system to apply changes
+
+## Troubleshooting
+
+If you encounter issues:
+- Verify all partitions are mounted correctly
+- Check the hardware configuration
+- Ensure flake.nix is properly configured
