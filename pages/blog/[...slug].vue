@@ -58,20 +58,30 @@ const formattedDate = computed(() => {
   margin: 1em 0;
 }
 
+:deep(h1),
+:deep(h2) {
+  font-size: 2em;
+}
+
+:deep(h3) {
+  font-size: 1.5em;
+}
+
+:deep(h4) {
+  font-size: 1.25em;
+}
+
 :deep(h1 a)::before,
-:deep(h2 a)::before,
-:deep(h3 a)::before,
-:deep(h4 a)::before {
+:deep(h2 a)::before {
   content: '#';
   color: rgb(209 213 219);
+  line-height: 1.5;
 }
 
 @media (prefers-color-scheme: dark) {
 
   :deep(h1 a)::before,
-  :deep(h2 a)::before,
-  :deep(h3 a)::before,
-  :deep(h4 a)::before {
+  :deep(h2 a)::before {
     content: '#';
     color: rgb(55 65 81);
   }
@@ -82,7 +92,6 @@ const formattedDate = computed(() => {
 :deep(h3 a),
 :deep(h4 a) {
   font-weight: 700;
-  font-size: 2em;
   color: #212475;
 }
 
