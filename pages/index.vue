@@ -1,6 +1,6 @@
 <template>
   <Main>
-    <div class="flex flex-col items-center justify-center gap-y-20 px-20 py-20">
+    <div class="flex flex-col items-center justify-center gap-y-20 px-6 md:px-20 py-20">
       <div class="w-full flex items-center justify-start relative">
         <span
           class="absolute font-jp dark:text-jp-purple text-jp-white text-5xl -bottom-1 left-0 mix-blend-difference">開発者</span>

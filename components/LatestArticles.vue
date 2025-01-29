@@ -38,7 +38,7 @@ const { formatTimeAgo } = useFormatTime()
         <p class="text-gray-300 dark:text-gray-700">#0<span class="text-jp-blue dark:text-jp-purple">{{
           getArticleNumber(index) }}</span>
         </p>
-        <div class="flex items-center justify-between w-full">
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between w-full">
           <h2 class="truncate max-w-lg">{{ article.title }}</h2>
           <p class="text-sm">{{ formatTimeAgo(new Date(article.date)) }}</p>
         </div>

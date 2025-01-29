@@ -56,6 +56,9 @@ export default defineNuxtConfig({
   },
   routeRules: {
     "/": { prerender: true },
+    "/blog": { ssr: true },
+    "/blog/:page": { ssr: true },
+    "/blog/*": { ssr: true },
     "/**": {
       headers: {
         'Cross-Origin-Embedder-Policy': 'require-corp',
@@ -63,4 +66,4 @@ export default defineNuxtConfig({
       }
     }
   },
-});
+})
