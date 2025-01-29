@@ -1,6 +1,6 @@
 ---
 title: 'Solutions for AdventJS 2023 by @Midudev'
-description: 'I explain how to apply JavaScript logic to solve Katas. Solving AdventJS 2023.'
+description: "I explain how to apply JavaScript logic to solve Katas. Solving AdventJS 2023."
 tags: Javascript
 date: 2023-12-13
 ---
