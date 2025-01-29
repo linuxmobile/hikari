@@ -5,8 +5,8 @@ useHead({
   }
 })
 useSeoMeta({
-  title: 'LinuDev - Un blog sobre programación para novatos',
-  description: 'Un blog sobre programación para novatos, javascript, react, rust, nix, y linux'
+  title: '光 (Hikari) Code - Chronicles of a Novice Programmer',
+  description: 'Exploring web development through elegant code and practical wisdom. A personal journey into JavaScript, React, and Rust.'
 })
 </script>
 <template>
@@ -28,7 +28,7 @@ useSeoMeta({
 @font-face {
   font-family: 'Humane';
   src: url('/fonts/Humane.ttf') format('truetype');
-  font-weight: 200 900;
+  font-weight: normal;
   font-display: swap;
   font-style: normal;
 }
