@@ -20,7 +20,7 @@ useSeoMeta({
 @font-face {
   font-family: 'Tsunagi';
   src: url('/fonts/TsunagiGothic.ttf') format('truetype');
-  font-weight: normal;
+  font-weight: 100 900;
   font-display: swap;
   font-style: normal;
 }
@@ -36,7 +36,7 @@ useSeoMeta({
 @font-face {
   font-family: 'GeistMono';
   src: url('/fonts/GeistMono.ttf') format('truetype');
-  font-weight: 200 900;
+  font-weight: 100 900;
   font-display: swap;
   font-style: normal;
 }
