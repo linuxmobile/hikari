@@ -6,7 +6,7 @@
     </div>
     <div class="">
       <nav class="px-1 flex items-center justify-center gap-x-3">
-        <NuxtLink to="https://github.com/linuxmobile/hikari" class="!text-jp-white">Github</NuxtLink>
+        <NuxtLink to="https://github.com/linuxmobile/kaneru" class="!text-jp-white">Github</NuxtLink>
         <NuxtLink to="https://twitter.com/LinuDev" class="!text-jp-white">Twitter</NuxtLink>
       </nav>
     </div>

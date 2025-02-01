@@ -2,7 +2,7 @@
   <header class="w-full bg-gray-800 p-1">
     <nav class="text-xs px-1 flex items-center justify-between">
       <NuxtLink to="/" class="!text-jp-white">{{ currentUrl }}</NuxtLink>
-      <NuxtLink to="/" class="!text-jp-white">v0.1.2</NuxtLink>
+      <NuxtLink to="https://github.com/linuxmobile/kaneru" class="!text-jp-white">v0.1.2</NuxtLink>
     </nav>
   </header>
 </template>
