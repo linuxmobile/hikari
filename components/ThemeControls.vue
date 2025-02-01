@@ -32,10 +32,10 @@ const emit = defineEmits<{
 <template>
   <button @click="togglePopup"
     class="absolute top-8 right-2 bg-gray-800 p-3 size-7 flex items-center justify-center hover:bg-gray-700 transition-colors">
-    <span class="text-white">?</span>
+    <span class="text-white text-xs">?</span>
   </button>
   <div v-if="isPopupOpen"
-    class="absolute top-8 right-12 flex items-center justify-center gap-x-3 text-white [&>button]:px-2">
+    class="absolute top-8 right-11 flex items-center justify-center gap-x-2 text-white text-xs [&>button]:px-2">
     <button @click="toggleNoise" class="flex items-center justify-between w-full bg-gray-800 size-7">
       <span>Noise&nbsp;</span>
       <span>{{ showNoise ? 'on' : 'off' }}</span>
