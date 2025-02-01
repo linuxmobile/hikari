@@ -5,16 +5,17 @@ useHead({
   }
 })
 useSeoMeta({
-  title: '光 (Hikari) Code - Chronicles of a Novice Programmer',
-  description: 'Exploring web development through elegant code and practical wisdom. A personal journey into JavaScript, React, and Rust.'
+  title: '霞る (Kaneru) Zen - Where Code Meets Kernel',
+  description: 'A kernel of wisdom in the digital realm. Where elegant code meets system-level thinking, inspired by Unix philosophy and the art of minimal, purposeful programming.'
 })
+
+const noiseEnabled = ref(true)
 </script>
 <template>
-  <Noise />
-  <div>
-    <NuxtRouteAnnouncer />
-  </div>
-  <NuxtPage />
+  <Noise v-if="noiseEnabled" />
+  <Main v-model:noiseEnabled="noiseEnabled">
+    <NuxtPage />
+  </Main>
 </template>
 <style>
 @font-face {

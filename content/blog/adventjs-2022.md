@@ -233,24 +233,24 @@ that will participate in the distribution of gifts.
 
 **Function Breakdown:**
 
-`reindeers.join("").length`: This part of the function joins the reindeer
+`reindeers.join("").length`{lang="js"}: This part of the function joins the reindeer
 names into a single string and then calculates the length of that
 string. This basically gives us the total number of letters in the reindeer
 names.
 
-`packOfGifts.join("").length`: Similar to the previous step, here all the
+`packOfGifts.join("").length`{lang="js"}: Similar to the previous step, here all the
 elements of the gift package are joined into a single string and its length is
 calculated. This will give us the total number of letters in the gift
 names.
 
-`* 2`: The result from step 1 is multiplied by 2. This doubles the number of
+`* 2`{lang="js"}: The result from step 1 is multiplied by 2. This doubles the number of
 letters in the reindeer names.
 
-`/`: Then, the result from step 3 is divided by the result from step 2. This
+`/`{lang="js"}: Then, the result from step 3 is divided by the result from step 2. This
 will give us a ratio indicating how many times the length of the reindeer
 names is greater than the length of the gift names.
 
-`>> 0`: Finally, the right shift operator (>>) is used with a value of 0
+`>> 0`{lang="js"}: Finally, the right shift operator (>>) is used with a value of 0
 to truncate any decimal part of the result. This converts the result to an
 integer, meaning we're interested in how many times the reindeer names are
 longer than the gift names, without worrying about fractions.

@@ -1,17 +1,20 @@
 <template>
-  <pre class="border-1 border-gray-800 bg-gray-100 dark:bg-jp-dark-secondary/40 w-full relative overflow-hidden">
+<pre class="not-prose border-1 border-gray-800 bg-gray-100 dark:bg-jp-dark-secondary/40 w-full relative overflow-hidden">
 <div class="w-full dark:bg-jp-dark-primary text-jp-white flex items-center justify-between border-b-1 border-gray-800">
-<p class="p-2 !text-white bg-gray-500 dark:bg-jp-dark-secondary/40 border-r-1 border-gray-800 w-fit">{{ filename }}</p>
+<p class="p-2 !text-white bg-gray-500 dark:bg-jp-dark-secondary/40 border-r-1 border-gray-800 w-fit">{{ filename }}
+</p>
 </div>
-<div class="px-4 overflow-auto"><slot /></div>
-<img src="/eva01.webp" alt="Eva-01 from evangelion, in pixelart" class="absolute -right-40 -top-30 -z-1 mix-blend-lighten opacity-20 saturate-120" />
-</pre>
+<div class="px-4 overflow-auto">
+<slot />
+</div>
+<img src="/eva01.webp" alt="Eva-01 from evangelion, in pixelart"
+class="absolute -right-40 -top-30 -z-1 mix-blend-lighten opacity-20 saturate-120" /></pre>
 </template>
 <script setup lang="ts">
 defineProps({
   filename: {
     type: String,
-    default: null
+    default: "kaneru@localhost:~$ "
   },
 })
 </script>
