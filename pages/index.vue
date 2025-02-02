@@ -3,7 +3,7 @@
     <div class="w-full flex items-center justify-start relative">
       <span
         class="absolute font-jp dark:text-jp-purple text-jp-white text-5xl -bottom-1 left-0 mix-blend-difference">カーネル</span>
-      <h1 class="text-jp-blue dark:text-jp-purple font-alt text-9xl font-extrabold">Kaneru</h1>
+      <h1 class="text-jp-blue dark:text-jp-purple font-alt text-9xl">Kaneru</h1>
     </div>
     <section class="flex flex-col gap-y-4">
       <div class="flex items-center justify-center w-full gap-x-12 pb-12">

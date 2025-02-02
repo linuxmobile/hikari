@@ -27,8 +27,8 @@ const noiseEnabled = ref(true)
 }
 
 @font-face {
-  font-family: 'Humane';
-  src: url('/fonts/Humane.ttf') format('truetype');
+  font-family: 'Schabo';
+  src: url('/fonts/schabo.woff2') format('woff2');
   font-weight: normal;
   font-display: swap;
   font-style: normal;

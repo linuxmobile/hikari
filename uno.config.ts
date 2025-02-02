@@ -60,7 +60,7 @@ export default defineConfig({
     fontFamily: {
       mono: 'GeistMono',
       jp: 'Tsunagi',
-      alt: 'Humane'
+      alt: 'Schabo'
     },
     colors: {
       'jp-red-deep': '#b3131a',
