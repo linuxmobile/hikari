@@ -20,7 +20,7 @@ export default defineNuxtConfig({
   content: {
     database: {
       type: "postgres",
-      url: process.env.POSTGRES_URL,
+      url: process.env.POSTGRES_URL || "",
     },
     build: {
       markdown: {
@@ -41,6 +41,7 @@ export default defineNuxtConfig({
             "nushell",
             "md",
             "mdx",
+            "diff"
           ],
           theme: {
             default: "kanagawa-lotus",
