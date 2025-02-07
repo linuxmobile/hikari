@@ -44,7 +44,9 @@ const formattedDate = computed(() => {
       <h1 class="font-semibold text-2xl text-jp-purple">{{ page?.title }}</h1>
     </div>
   </section>
-  <TocRuler />
+  <ClientOnly>
+    <TocRuler v-if="page" />
+  </ClientOnly>
   <ContentRenderer v-if="page" :value="page"
     class="px-6 md:px-20 py-10 text-sm max-w-none prose flex flex-col gap-y-4" />
 </template>

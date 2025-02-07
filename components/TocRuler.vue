@@ -31,7 +31,8 @@ const currentHeadingIndex = computed(() => {
   const currentPosition = (scrollPercentage.value / 100) * (headings.value.length - 1)
   return Math.floor(currentPosition)
 })
-</script><template>
+</script>
+<template>
   <div v-if="headings.length > 0"
     class="fixed left-8 top-1/2 -translate-y-1/2 h-60 flex flex-col items-center hidden md:flex">
     <div class="relative h-full">
