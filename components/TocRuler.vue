@@ -3,11 +3,18 @@ import { useWindowScroll, useWindowSize, useElementSize } from '@vueuse/core'
 
 const { y: scrollY } = useWindowScroll()
 const { height: windowHeight } = useWindowSize()
-const { height: documentHeight } = useElementSize(document.body)
+const documentHeight = ref(0)
+
 const route = useRoute()
 
-const { data: page } = await useAsyncData(route.path, () => {
+const { data: page } = await useAsyncData(`blog-${route.path}`, () => {
   return queryCollection('blog').path(route.path).first()
+})
+
+onMounted(() => {
+  // Fix: Assign the ref value, not the ref itself
+  const sizeRef = useElementSize(document.body)
+  documentHeight.value = sizeRef.height.value
 })
 
 const headings = computed(() => {
