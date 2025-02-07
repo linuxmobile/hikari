@@ -51,6 +51,17 @@ export default defineConfig({
           ".dark strong": {
             "background-color": "#d1d5db",
             color: "#090b0e"
+          },
+          "strong > a": {
+            "background-color": "#374151",
+            color: "#fff",
+            "font-weight": "700",
+            padding: "0 3px",
+            "text-decoration": "none"
+          },
+          ".dark strong > a": {
+            "background-color": "#d1d5db",
+            color: "#090b0e"
           }
         }
       }

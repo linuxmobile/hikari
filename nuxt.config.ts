@@ -67,11 +67,4 @@ export default defineNuxtConfig({
 			},
 		},
 	},
-	vite: {
-		build: {
-			rollupOptions: {
-				external: ["pg-native", "cloudflare:sockets"],
-			},
-		},
-	},
 });
